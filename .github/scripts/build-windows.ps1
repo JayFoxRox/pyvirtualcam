@@ -139,7 +139,7 @@ exec { python -c "import pyvirtualcam" }
 # Necessary to avoid bug when switching to test env.
 exec { conda deactivate }
 
-& .\.github\scripts\install-obs-virtual-cam.ps1
+& ..\.github\scripts\install-obs-virtual-cam.ps1
 
 # Unit tests
 exec { conda create --yes --name pyenv_test python=$env:PYTHON_VERSION numpy opencv --force }
