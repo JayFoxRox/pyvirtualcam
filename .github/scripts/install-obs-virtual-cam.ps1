@@ -19,7 +19,7 @@ function InstallObsVirtualCam () {
     Write-Host "Installing" $filepath "to" $install_dir
     Expand-Archive -LiteralPath $filepath -DestinationPath $install_dir -Force
     
-    $args = "/n /i:1 $pwd\$install_dir\bin\32bit\obs-virtualsource.dll"
+    $args = "/n /i:1 /s $pwd\$install_dir\bin\32bit\obs-virtualsource.dll"
     Write-Host "regsvr32" $args
     Start-Process -FilePath "regsvr32" -ArgumentList $args -Wait -Passthru -Verb "runAs"
 }
