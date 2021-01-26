@@ -142,7 +142,7 @@ exec { conda deactivate }
 & ..\.github\scripts\install-obs-virtual-cam.ps1
 
 # Unit tests
-exec { conda create --yes --name pyenv_test python=$env:PYTHON_VERSION numpy opencv --force }
+exec { conda create --yes --name pyenv_test python=$env:PYTHON_VERSION numpy --force }
 exec { conda activate pyenv_test }
 
 # Check that we have the expected version and architecture for Python
@@ -152,9 +152,9 @@ exec { python -c "import sys; print(sys.prefix)" }
 
 # output what's installed
 exec { python -m pip freeze }
-#
-#python -m pip uninstall -y rawpy
-#ls ..\dist\*.whl | % { exec { python -m pip install $_ } }
-#exec { python -m pip install -r ..\dev-requirements.txt }
-#exec { nosetests --verbosity=3 --nocapture ../test }
-#cd ..
+
+python -m pip uninstall -y pyvirtualcam
+ls ..\dist\*.whl | % { exec { python -m pip install $_ } }
+exec { python -m pip install -r ..\dev-requirements.txt }
+exec { pytest -v -s ../test }
+cd ..
