@@ -98,7 +98,7 @@ Init-VS
 Get-ChildItem env:
 
 $env:CONDA_ROOT = $pwd.Path + "\external\miniconda_$env:PYTHON_ARCH"
-& .\.github\scripts\install-miniconda.ps1
+& $PSScriptRoot\install-miniconda.ps1
 
 & $env:CONDA_ROOT\shell\condabin\conda-hook.ps1
 

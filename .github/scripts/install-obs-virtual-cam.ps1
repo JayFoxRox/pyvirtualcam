@@ -2,7 +2,7 @@ $ErrorActionPreference = 'Stop'
 
 $OBS_VIRTUAL_CAM_URL = 'https://github.com/Fenrirthviti/obs-virtual-cam/releases/download/2.0.5/OBS-Virtualcam-2.0.5-Windows.zip'
 
-. .\.github\scripts\download-file.ps1
+. $PSScriptRoot\download-file.ps1
 
 function DownloadObsVirtualCam () {
     $filename = "OBS-Virtualcam-Windows.zip"

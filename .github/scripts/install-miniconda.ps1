@@ -4,7 +4,7 @@
 
 $MINICONDA_URL = "http://repo.continuum.io/miniconda/"
 
-. .\.github\scripts\download-file.ps1
+. $PSScriptRoot\download-file.ps1
 
 function DownloadMiniconda ($python_version, $platform_suffix) {
     $filename = "Miniconda3-latest-Windows-" + $platform_suffix + ".exe"
